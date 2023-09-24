@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/two-sum-less-than-k/">1099. Two Sum Less Than K</a></h2><h3>Easy</h3><hr><div><p>Given an array <code>nums</code> of integers and&nbsp;integer <code>k</code>, return the maximum <code>sum</code> such that there exists <code>i &lt; j</code> with <code>nums[i] + nums[j] = sum</code> and <code>sum &lt; k</code>. If no <code>i</code>, <code>j</code> exist satisfying this equation, return <code>-1</code>.</p>
+<h2><a href="https://leetcode.com/problems/two-sum-less-than-k/solution/">1099. Two Sum Less Than K</a></h2><h3>Easy</h3><hr><div><p>Given an array <code>nums</code> of integers and&nbsp;integer <code>k</code>, return the maximum <code>sum</code> such that there exists <code>i &lt; j</code> with <code>nums[i] + nums[j] = sum</code> and <code>sum &lt; k</code>. If no <code>i</code>, <code>j</code> exist satisfying this equation, return <code>-1</code>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
