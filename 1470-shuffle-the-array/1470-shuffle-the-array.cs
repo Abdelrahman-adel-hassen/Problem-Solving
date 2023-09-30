@@ -1,11 +1,18 @@
 public class Solution {
     public int[] Shuffle(int[] nums, int n) {
-        int len=nums.Length;
-        var ans=new int[len];
-        for(int i=0;i<len/2;i++){
-           ans[i*2]=nums[i];
-           ans[i*2+1]=nums[i+n];
+        int lenOfNums=nums.Length;
+        
+        for(int i=0;i<lenOfNums/2;i++){
+            int num=nums[i+n]<<10;
+            nums[i]|=num;
         }
-        return ans;
+        int ones=(1<<10)-1;
+        for(int i=n-1;i>=0;i--){
+            int firstNum=nums[i]>>10;
+            int secondNum=nums[i] & ones;
+            nums[i*2]=secondNum;
+            nums[i*2+1]=firstNum ;
+        }
+        return nums;
     }
 }
