@@ -20,10 +20,10 @@ public class Solution {
         StringBuilder str=new StringBuilder();
         while(num>0){
             var RomanValue=RomanValues[RomanValuesIndex];
-              int retryCount=num/RomanValue.Value;
-              num%=RomanValue.Value;
-              while(retryCount-->0)
+              while(num>=RomanValue.Value){
+                  num-=RomanValue.Value;
                   str.Append(RomanValue.Name);
+              }
               RomanValuesIndex++;
                 
         }
