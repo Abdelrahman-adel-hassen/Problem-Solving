@@ -1,46 +1,31 @@
 public class Solution {
     public string IntToRoman(int num) {
-        var RomanValues=new List<(char Name,int Index)>()
-     {
-         ('M',1000),
-         ('D',500),
-         ('C',100),
-         ('L',50),
-         ('X',10),
-         ('V',5),
-         ('I',1),
-     };
-      var RomanConcatValues=new List<(int Index, string Name)>(){
+
+      var RomanValues=new List<(int Value, string Name)>(){
+            (1000,"M"),
             (900,"CM"),
+            (500,"D"),
             (400,"CD"),
+            (100,"C"),
             (90,"XC"),
+            (50,"L"),
             (40,"XL"),
+            (10,"X"),
             (9,"IX"),
+            (5,"V"),
             (4,"IV"),
             (1,"I"),
         };
         int RomanValuesIndex=0;
-        int RomanConcatValuesIndex=0;
         StringBuilder str=new StringBuilder();
         while(num>0){
-            var firstValue=RomanValues[RomanValuesIndex];
-            var secondValue=RomanConcatValues[RomanConcatValuesIndex];
-            if(secondValue.Index>firstValue.Index){
-              int retryCount=num/secondValue.Index;
-              num%=secondValue.Index;
+            var RomanValue=RomanValues[RomanValuesIndex];
+              int retryCount=num/RomanValue.Value;
+              num%=RomanValue.Value;
               while(retryCount-->0)
-                  str.Append(secondValue.Name);
-              RomanConcatValuesIndex++;
-            }
-            else {
-               int retryCount=num/firstValue.Index;
-              num%=firstValue.Index;
-              while(retryCount-->0)
-                  str.Append(firstValue.Name);
+                  str.Append(RomanValue.Name);
               RomanValuesIndex++;
                 
-            }
-           
         }
         return str.ToString();
     }
