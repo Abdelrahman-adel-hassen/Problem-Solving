@@ -10,14 +10,11 @@ public class Solution {
         }
         Console.WriteLine(product+" "+numOfZeros);
         for(int i=0;i<nums.Length;i++){
-            if(nums[i]==0){
-                if(numOfZeros<=1)
-                    nums[i]=product;
-                else 
-                    nums[i]=0;
-            }
-            else
+            if(nums[i]!=0){
                 nums[i]=numOfZeros>0?0:product/nums[i];
+                continue;
+            }
+            nums[i]=numOfZeros<=1?product:0;   
         }
         return nums;
     }
