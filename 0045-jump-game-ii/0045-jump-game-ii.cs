@@ -1,11 +1,9 @@
 public class Solution {
     public int Jump(int[] nums) {
-          int mxJump=0,prevMxValue=0,n=nums.Length;
-          if(n<=1)
-              return 0;
-          int currMxValue=Math.Min(n-1,nums[0]);
+           int mxJump=0,prevMxValue=0,n=nums.Length;
+           int currMxValue=Math.Min(n-1,nums[0]);
            for(int i=1;i<n;i++){
-               int mnValue=Math.Min(i+nums[i],n-1);
+                int mnValue=Math.Min(i+nums[i],n-1);
                 prevMxValue=Math.Max(prevMxValue,mnValue);
                 if(i==currMxValue){
                     mxJump++;
