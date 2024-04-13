@@ -11,6 +11,8 @@ public class Solution {
             return children;
         if (money / 7 == children - 1 && money % 7 == 3)
             return children - 2;
-        return Math.Min(children - 1, money / 7);
+         if (money / 7 >= children - 1)
+            return children - 1;
+        return  money / 7;
     }
 }
