@@ -16,6 +16,6 @@ public class Solution {
                  maxLongest=maxLongest%2==0?0:maxLongest+1;
             result=Math.Max(result,maxLongest);
         }
-        return Math.Max(result,maxLongest);
+        return result;
     }
 }
