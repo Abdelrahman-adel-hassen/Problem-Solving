@@ -6,7 +6,6 @@ public class Solution {
      
         int score1=player1[0]+player1[1]*(player1[0]==10?2:1);
         int score2=player2[0]+player2[1]*(player2[0]==10?2:1);
-        Console.WriteLine(score2+" "+score1);
        for(int i=2;i<player1.Count();i++){
           score1+=player1[i];
           score2+=player2[i];
