@@ -5,13 +5,12 @@ public class Solution {
         int numbersWithORS=0;
         int CurrentSubIndex=0;
         int ans=51;
-        var bitWiseNumberCount=new int[32];
+        var bitWiseNumberCount=new int[6];
         for(int i=0;i<nums.Count();i++){
             SetBitWiseNumberCount(bitWiseNumberCount,nums[i]);
             numbersWithORS=GetCurrentNumbersWithORS(bitWiseNumberCount);
         
             while(numbersWithORS>=k){
-
                 ans=Math.Min(ans,i-CurrentSubIndex+1);
                 UnSetBitWiseNumberCount(bitWiseNumberCount,nums[CurrentSubIndex]);
                 CurrentSubIndex++;
@@ -41,7 +40,7 @@ public class Solution {
     }
      private int GetCurrentNumbersWithORS(int[] bitWiseNumberCount){
          int numbersWithORS=0;
-        for(int i=0;i<32;i++){
+        for(int i=0;i<6;i++){
             if(bitWiseNumberCount[i]>0){
                 numbersWithORS|=(1<<i);
             }
