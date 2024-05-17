@@ -13,17 +13,13 @@
  */
 public class Solution {
     private int GetSecondMinimumValue(TreeNode root,int minMumValue){
-        if(root.left==null)
-            return root.val;
+        if(root==null)
+            return -1;
         
         var value1 = GetSecondMinimumValue(root.left,minMumValue);
         var value2 = GetSecondMinimumValue(root.right,minMumValue);
-        if(value1==minMumValue&&value2==minMumValue)
-            return -1;
-        else if(value1==minMumValue)
-            return value2;
-        else if(value2==minMumValue)
-            return value1;
+        if(root.val>minMumValue)
+            return root.val;
         else if(value1==-1)
             return value2;
         else if(value2==-1)
