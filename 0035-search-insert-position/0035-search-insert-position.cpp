@@ -7,6 +7,6 @@ public:
             if(nums[mid]>=target)r=mid;
             else l=mid+1;
         }
-        return r;
+        return l;
     }
 };
