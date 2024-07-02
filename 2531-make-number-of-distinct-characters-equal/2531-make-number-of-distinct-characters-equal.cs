@@ -14,8 +14,7 @@ public class Solution {
     int distinctOfWord2 = GetDistinctCharacters(words2);
     if (Math.Abs(distinctOfWord1 - distinctOfWord2) > 2)
         return false;
-    if(SameDistinctCharacters(words1 , words2))
-     return true;
+
     for (int i = 0; i < 26; i++)
     {
         if (words1[i] == 0)
@@ -52,15 +51,5 @@ private int GetDistinctCharacters(int[] words)
 {
     return words.Count(x => x > 0);
 }
-bool SameDistinctCharacters(int[] words1, int[] words2)
-{
-     for (int i = 0; i < 26; i++)
- {
-     if (words1[i] == 0 && words2[i] == 0)
-         continue;
-     if (words1[i] == 0 || words2[i] == 0)
-         return false ;
- }
-    return true;
-}   
+ 
 }
