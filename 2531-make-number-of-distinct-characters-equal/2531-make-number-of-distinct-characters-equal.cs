@@ -25,22 +25,20 @@ public class Solution {
             if (words2[j] == 0)
                   continue;
               int newDistinctWord1 = distinctOfWord1;
+              int newDistinctWord2 = distinctOfWord2;
+
               if (i != j)
               {
                   if (words1[i] - 1 == 0)
                       newDistinctWord1--;
                   if (words1[j] + 1 == 1)
                       newDistinctWord1++;
-              }
-
-              int newDistinctWord2 = distinctOfWord2;
-              if (i != j)
-              {
                   if (words2[j] - 1 == 0)
                       newDistinctWord2--;
                   if (words2[i] + 1 == 1)
                       newDistinctWord2++;
               }
+
             if (newDistinctWord1 != 0 && newDistinctWord2 == newDistinctWord1)
                 return true;
         }
