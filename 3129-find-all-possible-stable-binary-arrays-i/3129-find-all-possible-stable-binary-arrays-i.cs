@@ -14,16 +14,16 @@ public class Solution {
     var result = Solve(2, zero, one, limit,limit, dp);
     return result;
 }
-public int Solve(int ii, int zero, int one, int limit, int lim, int[,,,] dp)
+public int Solve(int prev, int zero, int one, int limit, int lim, int[,,,] dp)
 {
     if (zero < 0 || one < 0)
         return 0;
-    if (dp[ii, limit, zero, one] != -1)
-        return dp[ii, limit, zero, one];
+    if (dp[prev, limit, zero, one] != -1)
+        return dp[prev, limit, zero, one];
     if (limit == 0)
-        return dp[ii, limit, zero, one] = 0;
+        return dp[prev, limit, zero, one] = 0;
     if (zero == 0 && one == 0)
-        return dp[ii, limit, zero, one] = 1;
-    return dp[ii, limit, zero, one] = (Solve(0, zero - 1, one, ii == 0 ? limit - 1 : lim, lim, dp)% mod + Solve(1, zero, one - 1, ii == 1 ? limit - 1 : lim, lim, dp)% mod)% mod;
+        return dp[prev, limit, zero, one] = 1;
+    return dp[prev, limit, zero, one] = (Solve(0, zero - 1, one, prev == 0 ? limit - 1 : lim, lim, dp)% mod + Solve(1, zero, one - 1, prev == 1 ? limit - 1 : lim, lim, dp)% mod)% mod;
 }
 }
