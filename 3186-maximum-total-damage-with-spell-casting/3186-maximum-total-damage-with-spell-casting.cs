@@ -24,6 +24,6 @@ public long Solve(int i, long[] dp, List<Tuple<int, int>> numbers)
         nextIndex = i + 2 >= numbers.Count || numbers[i + 2].Item1 > numbers[i].Item1 + 2 ? 2 : 3;
     dp[i] = result = Solve(i + nextIndex, dp, numbers) + numbers[i].Item1 * (long)numbers[i].Item2;
 
-    return dp[i] = Math.Max(result, Solve(i + 1, dp, numbers));
+    return dp[i] = nextIndex == 1 ? result : Math.Max(result, Solve(i + 1, dp, numbers));
 }
 }
