@@ -2,7 +2,9 @@ public class Solution {
     public int MinimumNumbers(int num, int k)
     {
        if (num == 0) return 0;
-       for(int i=1;i<=num;i++){
+        //(x*10+k)+(y*10+k)=num;
+        //(x+y)*10+2k+num
+       for(int i=1;i<=10;i++){
            int numTemp=num-i*k;
            if(numTemp<0)
                break;
