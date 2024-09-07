@@ -39,7 +39,6 @@ public class Solution {
 
             }
         }
-        Console.WriteLine(totalOnes + " " + removeOnes1 + " " + ans);
         if (totalOnes % 4 == 0)
             return ans;
         return ans + (removeOnes1 ? 0 : 2);
