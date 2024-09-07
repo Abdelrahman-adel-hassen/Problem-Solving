@@ -4,6 +4,7 @@ public class Solution {
        if (num == 0) return 0;
         //(x*10+k)+(y*10+k)=num;
         //(x+y)*10+2k+num
+        //max number can reach is 10
        for(int i=1;i<=10;i++){
            int numTemp=num-i*k;
            if(numTemp<0)
